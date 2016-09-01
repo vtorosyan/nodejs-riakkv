@@ -19,21 +19,16 @@ HelpService.prototype.createMessage = function (name) {
         subject: 'Hello,' + name,
         text: 'Hello,' + name,
         html: '<h3>You are requesting new password for your recommendation engine.</h3><p>Please change your password after first login.</p><p>Password:' + HelpService.prototype.getRandomKey() + '</p>'
-    }
-    console.log(message);
+    }    
     return message;
 };
 
 HelpService.prototype.sendMail = function (transport, name) {
     transport.sendMail(HelpService.prototype.createMessage(name), function (error) {
-        if (error) {
-            console.log('Error occured');
-            console.log(error.message);
-        } else {
-            console.log('Message sent successfully!');
-        }
-        // if you don't want to use this transport object anymore, uncomment following line
-        //transport.close(); // close the connection pool
+        if (error) {            
+            console.err(error.message);
+        }         
+        transport.close(); 
     });
 }
 

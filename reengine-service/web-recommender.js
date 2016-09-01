@@ -1,8 +1,7 @@
 //https://github.com/mikeal/request
 var request = require("request");
 
-RecommenderService = function () {
-};
+RecommenderService = function () {};
 "use strict";
 ///Call java serivce for track an item
 var serviceAddress = "http://www.google.com";
@@ -31,8 +30,7 @@ RecommenderService.prototype.processRecommend = function (params, callback) {
         var response = {};
 
         var mapredInp = [];
-        recs.recommendedItems.forEach(function (item) {
-            console.log(item);
+        recs.recommendedItems.forEach(function (item) {        
             mapredInp.push(["items", item.iid])
         });
 
@@ -48,8 +46,7 @@ RecommenderService.prototype.processRecommend = function (params, callback) {
         };
 
         request(opts, function (err, response, body) {
-            if (err || response.statusCode != 200) {
-                console.log(err);
+            if (err || response.statusCode != 200) {                
                 return callback(err || "Riak returned " + response.statusCode);
             }
 

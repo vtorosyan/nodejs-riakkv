@@ -36,7 +36,6 @@ exports.logout = function (req, res) {
     res.redirect('/login');
 };
 
-// handler for form submitted from register
 exports.register_post_handler = function (req, res) {
     if (!req.body.firstname) {
         res.render('register', {
@@ -104,7 +103,6 @@ exports.register_post_handler = function (req, res) {
     });
 };
 
-// handler for form submitted from login
 exports.login_post_handler = function (req, res) {
     if (helper.isEmpty(req.body.email)) {
         res.render('login', {title: 'Recommendation engine', email: req.body.email, page: 'Sign In', error: 'email'});
@@ -132,7 +130,6 @@ exports.login_post_handler = function (req, res) {
     })
 };
 
-// handler for form submitted from login
 exports.forgot_post_handler = function (req, res) {
     email = req.body.email;
     if (!email) {
@@ -145,9 +142,7 @@ exports.forgot_post_handler = function (req, res) {
             res.render('forgot_password', {title: 'Recommendation engine', page: 'Forgot Password', error: 'email'});
             return;
         } else {
-            console.log('data ' + data.firstname);
-            name = data.firstname;
-            console.log('Sending Mail');
+            name = data.firstname;            
 
             helper.sendMail(transport, name);
             res.redirect('/login');

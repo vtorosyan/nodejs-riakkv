@@ -28,10 +28,8 @@ server.post('/api', function create(req, res, next) {
 
 // Call to learn given id and name in url.
 // It is mandatory to pass iid and name parameters in url.
-server.get('/api/learn/', function create(req, res, next) {
-    console.log(req.params);
+server.get('/api/learn/', function create(req, res, next) {    
     learn(req, function (err) {
-
         if (err)  return next(err);
         res.send(201, "success");
     });
@@ -39,7 +37,6 @@ server.get('/api/learn/', function create(req, res, next) {
 
 server.get('/api/recommend', function create(req, res, next) {
     recommender.recommend(req, function (err, recommendations) {
-
         if (err)  return next(err);
         res.send(201, recommendations);
     });
@@ -72,8 +69,7 @@ function learn(req, callback) {
 }
 
 //Store needed item metadata to RIAK from request.
-function storeMetaData(req, callback) {
-    console.log(req.params);
+function storeMetaData(req, callback) {    
     db.save("items", req.params.iid, paramsToJSON(req), function (err) {
         callback(err);
     });
@@ -93,8 +89,7 @@ server.get('/index', function (req, res, next) {
             res.send(500);
             return next();
         }
-
-        console.log(file);
+        
         res.write(file);
         res.end();
         return next();
@@ -108,8 +103,7 @@ server.get('/reengine.js', function (req, res, next) {
             res.send(500);
             return next();
         }
-
-        console.log(file);
+        
         res.write(file);
         res.end();
         return next();
