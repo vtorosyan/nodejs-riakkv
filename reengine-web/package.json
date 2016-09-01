@@ -1,0 +1,11 @@
+{
+    "name": "Client for recommendation engine"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.11"
+    , "stylus": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
+    , "riak-js": ">= 1.1.0"
+  }
+}

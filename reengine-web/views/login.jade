@@ -1,0 +1,28 @@
+div#wrapper
+ div.container
+  div#register.register
+   form(method='post')
+    h3= page
+    div
+     - var email = typeof(email) != 'undefined' ? email : ''
+     label Email:
+     input(name='email', value=email, type='text').input-text
+     - if (typeof(error) != 'undefined' && error === 'email')       
+          span.error(style='visibility:visible') Invalid email address
+     - else 
+         br      
+    div
+     label Password:
+      a(href='forgot').forgot
+       | Forgot your password?
+     input(name='password', type='password').input-text
+     - if (typeof(error) != 'undefined' && error === 'password')       
+          span.error(style='visibility:visible') Invalid password
+     - else if(typeof(error) != 'undefined' && error === 'riak')
+         span.error(style='visibility:visible') Invalid email or password
+     - else 
+        br
+    div.bottom
+     input(type='submit', value='Sign In').button   
+     a(href='register')
+      | or Sign Up

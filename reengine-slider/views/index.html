@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1"/>
+    <meta name="author" content=""/>
+
+    <title></title>
+
+    <script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/jquery.carouFredSel-5.6.1.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $('#foo2').carouFredSel({
+                prev: '#prev2',
+                next: '#next2',
+                pagination: "#pager2",
+                auto: false,
+                items: {
+                    //	width: 400,
+                    //	height: '30%',	//	optionally resize item-height
+                    visible: 5
+                }
+            });
+        });
+    </script>
+
+    <style type="text/css" media="all">
+
+        a, a:link, a:active, a:visited {
+            color: black;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #9E1F63;
+        }
+
+        .list_carousel {
+            background-color: #ccc;
+            margin: 0 0 30px 60px;
+            width: 360px;
+        }
+
+        .list_carousel ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: block;
+        }
+
+        .list_carousel li {
+            font-size: 40px;
+            color: #999;
+            text-align: center;
+            background-color: #eee;
+            border: 5px solid #999;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            margin: 6px;
+            display: block;
+            float: left;
+        }
+
+        .clearfix {
+            float: none;
+            clear: both;
+        }
+
+        .prev {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .next {
+            float: right;
+            margin-right: 10px;
+        }
+
+        .pager {
+            float: left;
+            width: 300px;
+            text-align: center;
+        }
+
+        .pager a {
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .pager a.selected {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<div class="list_carousel">
+    <ul id="foo2">
+        <li>c</li>
+        <li>a</li>
+        <li>r</li>
+        <li>o</li>
+        <li>u</li>
+        <li>F</li>
+        <li>r</li>
+        <li>e</li>
+        <li>d</li>
+        <li>S</li>
+        <li>e</li>
+        <li>l</li>
+        <li></li>
+    </ul>
+    <div class="clearfix"></div>
+    <a id="prev2" class="prev" href="#">&lt;</a>
+    <a id="next2" class="next" href="#">&gt;</a>
+    <div id="pager2" class="pager"></div>
+</div>
+</body>
+</html>

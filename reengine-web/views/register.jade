@@ -1,0 +1,57 @@
+div#wrapper
+ div.container
+  div#register.register
+   form(method='post')
+    h3= page
+    div.column
+     div
+      - var firstName = typeof(firstname) != 'undefined' ? firstname : ''
+      label First Name:
+      input(name='firstname', type='text', value=firstName, placeholder='required').input-text     
+      - if (typeof(error) != 'undefined' && error === 'firstname')       
+          span.error(style='visibility:visible') Invalid first name
+      - else 
+         br
+     div
+      - var lastName = typeof(lastname) != 'undefined' ? lastname : ''
+      label Last Name:
+      input(name='lastname', type='text', value=lastName, placeholder='required').input-text
+      - if (typeof(error) != 'undefined' && error === 'lastname')       
+          span.error(style='visibility:visible') Invalid last name
+      - else 
+         br
+     div
+      - var company = typeof(company) != 'undefined' ? company : ''
+      label Company:
+      input(name='company', type='text', value=company, placeholder='optional').input-text
+      br
+    div.column
+     div
+      - var email = typeof(email) != 'undefined' ? email : ''
+      label Email:
+      input(name='email', type='text', value=email, placeholder='required').input-text
+      - if (typeof(error) != 'undefined' && error === 'email')       
+          span.error(style='visibility:visible') Invalid email
+      - else  
+         br
+     div
+      label Password:
+      input(name='password', type='password', placeholder='required').input-text
+      - if (typeof(error) != 'undefined' && error === 'password')       
+          span.error(style='visibility:visible') Invalid password
+      - else 
+         br
+     div
+      label Confirm Password:
+      input(name='cpassword', type='password', placeholder='required').input-text
+      - if (typeof(error) != 'undefined' && error === 'cpassword')       
+          span.error(style='visibility:visible') Invalid password confirmation
+      - else if(typeof(error) != 'undefined' && error === 'riak')
+         span.error(style='visibility:visible') Registration process is failed
+      - else 
+         br
+    div.bottom
+     input(type='submit', value='Sign Up').button a(href='login')
+     a(href='login')
+       | or Sign in
+     

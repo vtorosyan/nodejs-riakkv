@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Product Name</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="reengine.js"></script>
+
+    <script>
+        var token = "123456";
+        learn(token, function (err, items) {
+            if (err) {
+                return console.error(err);
+            }
+            // e.g. render recommendation box here
+            items.forEach(function (item) {
+                console.log('item', item);
+            });
+        });
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
